@@ -54,24 +54,52 @@
     </head>
     <body>
         
-    <?php
+    <!-- <?php
         
     foreach ($hotels as $hotel => $value) {
-        var_dump($hotel);
-        var_dump($value);
+        // var_dump($hotel);
+        // var_dump($value);
     ?>
         <p><?php echo $hotel ?></p>
         <p>Hotel: <?php echo $value['name'] ?></p>
         <p>Descrizione hotel: <?php echo $value['description'] ?></p>
         <p>Parcheggio: <?php echo $value['parking'] ?></p>
         <p>Votazione: <?php echo $value['vote'] ?></p>
-        <p>Distanza dal centro: <?php echo $value['distance_to_center'] ?></p>
+        <p>Distanza dal centro: <?php echo $value['distance_to_center'] ?> km</p>
 
 
     <?php
         }
-    ?>
+    ?> -->
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Hotel</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Distanza dal centro</th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php
+        foreach ($hotels as $value) {
+      ?>
+            <tr>
+                <td><?php echo $value['name']?></td>
+                <td><?php echo $value['description']?></td>
+                <td><?php echo $value['parking']?></td>
+                <td><?php echo $value['vote']?></td>
+                <td><?php echo $value['distance_to_center']?></td>
+            </tr>            
+
+        <?php
+        }
+        ?>
+  
+</tbody>
+</table>
 
 
     
